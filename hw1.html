@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anketa</title>
+</head>
+<body>
+    <script>
+               
+        do {getSurname=prompt(`Введите вашу фамилию`);} 
+        while (!isNaN(getSurname)==true || getSurname==='')
+        do {getName=prompt(`Введите ваше имя`);}
+        while (!isNaN(getName)==true || getName==='')
+        do {getFatherName=prompt(`Введите ваше отчество`);}
+        while (!isNaN(getFatherName)==true || getFatherName==='')
+        do {getAge=prompt(`Введите ваш возраст в годах`);}
+        while (!isNaN(getAge)==false || getAge>=100 || getAge==='');
+        let getGender=confirm(`Ваш пол - мужской?`);
+        let ageNum=parseInt(getAge);
+        let ageInDays=ageNum*365;
+        let age5Years=ageNum+5;
+        const pensionM=63;
+        const pensionW=58;
+        let result=null;
+
+        if (getGender=true && ageNum>=pensionM)
+        result = (`Ваше ФИО:` + ' ' + getSurname + ' ' + getName + ' ' + getFatherName + '\n' + 'Ваш возраст в годах:'+ ' '  + ageNum + '\n' + 'Ваш возраст в днях:' + ' '  + ageInDays + '\n' + 'Ваш возраст через 5 лет:' + ' ' + age5Years + '\n' + 'Ваш пол: мужской' + '\n' + 'Вы на пенсии: да')
+        else if (getGender=true && ageNum<pensionM)
+        result = (`Ваше ФИО:` + ' ' + getSurname + ' ' + getName + ' ' + getFatherName + '\n' + 'Ваш возраст в годах:' + ' ' + ageNum + '\n' + 'Ваш возраст в днях:' + ' '  + ageInDays + '\n' + 'Ваш возраст через 5 лет:' + ' ' + age5Years + '\n' + 'Ваш пол: мужской' + '\n' + 'Вы на пенсии: нет')
+        else if (getGender=false && ageNum<pensionW)
+        result = (`Ваше ФИО:` + ' ' + getSurname + ' ' + getName + ' ' + getFatherName + '\n' + 'Ваш возраст в годах:' + ' ' + ageNum + '\n' + 'Ваш возраст в днях:' + ' ' + ageInDays + '\n' + 'Ваш возраст через 5 лет:' + ' ' + age5Years + '\n' + 'Ваш пол: женский' + '\n' + 'Вы на пенсии: нет')
+        else if (getGender=false && ageNum>=pensionW)
+        result = (`Ваше ФИО:` + ' ' + getSurname + ' ' + getName + ' ' + getFatherName + '\n' + 'Ваш возраст в годах:' + ' ' + ageNum + '\n' + 'Ваш возраст в днях:' + ' '  + ageInDays + '\n' + 'Ваш возраст через 5 лет:' + ' ' + age5Years + '\n' + 'Ваш пол: женский' + '\n' + 'Вы на пенсии: да');
+
+        alert(result);
+
+
+
+
+    </script>
+    
+</body>
+</html>
